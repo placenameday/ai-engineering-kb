@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_serena_serena__list_dir",
+      "WebSearch",
+      "Bash(echo EXIT:$?:*)",
+      "Skill(rmd-to-quarto)",
+      "Bash(2)",
+      "Bash(tmux list-sessions:*)"
+    ]
+  }
+}
