@@ -6,7 +6,10 @@
       "Bash(echo EXIT:$?:*)",
       "Skill(rmd-to-quarto)",
       "Bash(2)",
-      "Bash(tmux list-sessions:*)"
+      "Bash(tmux list-sessions:*)",
+      "Read(//Users/placenameday/R_Project/Research/_shared/**)",
+      "Read(//Users/placenameday/.claude/**)",
+      "Bash(cd:*)"
     ]
   }
 }

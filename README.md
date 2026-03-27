@@ -13,37 +13,58 @@ A curated reference covering frontier AI engineering concepts, design patterns, 
 
 ---
 
-## Directory Structure
+## How to Navigate
 
 ```
-ai-engineering-kb/
-├── README.md                    # This file
-├── practical-guide.md           # Quick-reference for Claude Code projects
-├── concepts/                    # Individual concept deep-dives
-│   ├── _index.md                # Concept map + key thinkers table
-│   ├── harness-engineering.md   # Harness Engineering (2026 paradigm)
-│   ├── context-engineering.md   # Context Engineering (merged deep-dive)
-│   ├── software-3.0.md          # Software 3.0
-│   ├── agentic-engineering.md   # Vibe Coding → Agentic Engineering
-│   ├── agentic-design-patterns.md  # Agentic Design Patterns (Andrew Ng)
-│   ├── compound-ai-systems.md   # Compound AI Systems (BAIR)
-│   ├── 12-factor-agents.md      # 12-Factor Agents (Dex Horthy)
-│   ├── eval-driven-development.md  # Evaluation-Driven Development
-│   ├── spec-driven-development.md  # Spec-Driven Development
-│   ├── cognitive-architectures.md  # Cognitive Architectures for Language Agents
-│   ├── anthropic-agent-design.md   # Anthropic's Agent Design Principles
-│   ├── agentic-patterns-willison.md  # Agentic Engineering Patterns (Willison)
-│   ├── guardrails-progressive-autonomy.md  # Guardrails & Progressive Autonomy
-│   └── llm-orchestration.md     # LLM Orchestration as Discipline
-└── tooling/                     # Tool surveys and ecosystem catalogs
-    ├── ai-engineering-survey-2026.md  # 2026 AI Engineering comprehensive survey (Chinese)
-    ├── research-tools-survey.md  # AI research writing tools (Chinese)
-    └── skills-ecosystem.md       # Claude Code skills & plugins ecosystem
+你想要什么？
+
+"优化我的 AI 项目" ──→ practical-guide.md (操作入口)
+"理解某个概念" ──→ concepts/_index.md (概念导航)
+"了解工具生态" ──→ tooling/ (工具调查)
+"全面学习" ──→ 按下方六层模型从 L0 读到 L5
 ```
 
 ---
 
-## Six-Layer Framework (AI工程六层模型)
+## Practice Guides (实践指南)
+
+> **Entry point:** [practical-guide.md](practical-guide.md) — 5 步操作：定位→诊断→实施→验证→深度探索
+
+| File | Role | When to Read |
+|------|------|-------------|
+| [practical-guide.md](practical-guide.md) | 操作入口 (诊断→实施→验证→深潜) | 拿到一个项目要优化时 |
+| [practical-guide-universal.md](practical-guide-universal.md) | Harness 7 组件 × 4 工具对照 | 建基础 / 跨工具参考 |
+| [practical-guide-cc.md](practical-guide-cc.md) | Claude Code 配置细节 | 用 CC 时 |
+| [practical-guide-oc.md](practical-guide-oc.md) | SDK/API 代码模板 | 用 API 开发 Agent 时 |
+| [architecture-guide.md](architecture-guide.md) | Multi-Agent 架构设计 | 设计系统架构时 |
+| [optimization-guide.md](optimization-guide.md) | Quality/Cost/Latency 优化 | 优化系统效率时 |
+
+### File Relationships
+
+```
+practical-guide.md (入口：诊断+路线图)
+    │
+    ├─→ practical-guide-universal.md (Harness 理论 × 工具映射)
+    │       └─→ concepts/harness-engineering.md (Harness 范式定义)
+    │
+    ├─→ practical-guide-cc.md (CC 配置)
+    │
+    ├─→ practical-guide-oc.md (代码模板)
+    │       └─→ concepts/12-factor-agents.md (Agent 原则)
+    │
+    ├─→ architecture-guide.md (架构蓝图)
+    │       ├─→ practical-guide-oc.md §3 (Harness 代码实现)
+    │       └─→ concepts/context-engineering.md (Context 理论)
+    │
+    └─→ optimization-guide.md (优化技术)
+            └─→ architecture-guide.md §5 (Context 层设计)
+```
+
+---
+
+## Concepts (概念深潜)
+
+### Six-Layer Framework (AI工程六层模型)
 
 **Paradigm Hierarchy:**
 - **Harness Engineering** (2026) — "How does the system behave?"
@@ -81,67 +102,65 @@ ai-engineering-kb/
 
 > See [concepts/_index.md](concepts/_index.md) for layer details, learning path, relationship matrix, and key thinkers.
 
----
+### All Articles
 
-## All Articles
-
-### L0: Paradigm Evolution
+#### L0: Paradigm Evolution
 
 | Article | Description |
 |---------|-------------|
-| [concepts/harness-engineering.md](concepts/harness-engineering.md) | **Harness Engineering (2026)** — the operational environment around AI agents |
+| [harness-engineering.md](concepts/harness-engineering.md) | **Harness Engineering (2026)** — the operational environment around AI agents |
 
-### L1: Paradigm & Vision
-
-| Article | Description |
-|---------|-------------|
-| [concepts/software-3.0.md](concepts/software-3.0.md) | Software 3.0 — natural language as programming language (Karpathy) |
-| [concepts/agentic-engineering.md](concepts/agentic-engineering.md) | Vibe Coding → Agentic Engineering spectrum |
-
-### L2: System Architecture
+#### L1: Paradigm & Vision
 
 | Article | Description |
 |---------|-------------|
-| [concepts/compound-ai-systems.md](concepts/compound-ai-systems.md) | Intelligence from multiple interacting components (BAIR/Zaharia) |
-| [concepts/cognitive-architectures.md](concepts/cognitive-architectures.md) | Cognitive science principles for LLM agent design (CoALA, EGI, CCA) |
-| [concepts/llm-orchestration.md](concepts/llm-orchestration.md) | Coordination layer for multi-model, multi-agent systems |
+| [software-3.0.md](concepts/software-3.0.md) | Software 3.0 — natural language as programming language (Karpathy) |
+| [agentic-engineering.md](concepts/agentic-engineering.md) | Vibe Coding → Agentic Engineering spectrum |
 
-### L3: Design Patterns
-
-| Article | Description |
-|---------|-------------|
-| [concepts/agentic-design-patterns.md](concepts/agentic-design-patterns.md) | Four foundational agent workflow patterns (Andrew Ng) |
-| [concepts/anthropic-agent-design.md](concepts/anthropic-agent-design.md) | Simplicity, transparency, ACI — Anthropic's three principles |
-| [concepts/agentic-patterns-willison.md](concepts/agentic-patterns-willison.md) | Practical coding patterns from Simon Willison |
-
-### L4: Engineering Methodology
+#### L2: System Architecture
 
 | Article | Description |
 |---------|-------------|
-| [concepts/eval-driven-development.md](concepts/eval-driven-development.md) | TDD equivalent for AI — evals as first-class artifacts |
-| [concepts/spec-driven-development.md](concepts/spec-driven-development.md) | Intent as source of truth; AI generates from specs |
-| [concepts/12-factor-agents.md](concepts/12-factor-agents.md) | 12 engineering principles for production LLM apps (Dex Horthy) |
+| [compound-ai-systems.md](concepts/compound-ai-systems.md) | Intelligence from multiple interacting components (BAIR/Zaharia) |
+| [cognitive-architectures.md](concepts/cognitive-architectures.md) | Cognitive science principles for LLM agent design (CoALA, EGI, CCA) |
+| [llm-orchestration.md](concepts/llm-orchestration.md) | Coordination layer for multi-model, multi-agent systems |
 
-### L5: Safety & Governance
-
-| Article | Description |
-|---------|-------------|
-| [concepts/guardrails-progressive-autonomy.md](concepts/guardrails-progressive-autonomy.md) | Layered safety architecture for production agents |
-
-### Cross-Cutting Discipline
+#### L3: Design Patterns
 
 | Article | Description |
 |---------|-------------|
-| [concepts/context-engineering.md](concepts/context-engineering.md) | Context Engineering — MCP, context rot, Anthropic framework, advanced patterns |
-| [concepts/_index.md](concepts/_index.md) | **Framework index** — layer details, learning path, relationship matrix, key thinkers |
+| [agentic-design-patterns.md](concepts/agentic-design-patterns.md) | Four foundational agent workflow patterns (Andrew Ng) |
+| [anthropic-agent-design.md](concepts/anthropic-agent-design.md) | Simplicity, transparency, ACI — Anthropic's three principles |
+| [agentic-patterns-willison.md](concepts/agentic-patterns-willison.md) | Practical coding patterns from Simon Willison |
+
+#### L4: Engineering Methodology
+
+| Article | Description |
+|---------|-------------|
+| [eval-driven-development.md](concepts/eval-driven-development.md) | TDD equivalent for AI — evals as first-class artifacts |
+| [spec-driven-development.md](concepts/spec-driven-development.md) | Intent as source of truth; AI generates from specs |
+| [12-factor-agents.md](concepts/12-factor-agents.md) | 12 engineering principles for production LLM apps (Dex Horthy) |
+
+#### L5: Safety & Governance
+
+| Article | Description |
+|---------|-------------|
+| [guardrails-progressive-autonomy.md](concepts/guardrails-progressive-autonomy.md) | Layered safety architecture for production agents |
+
+#### Cross-Cutting
+
+| Article | Description |
+|---------|-------------|
+| [context-engineering.md](concepts/context-engineering.md) | Context Engineering — MCP, context rot, Anthropic framework, advanced patterns |
+| [_index.md](concepts/_index.md) | **Framework index** — layer details, learning path, relationship matrix, key thinkers |
 
 ### Tooling
 
 | Article | Description |
 |---------|-------------|
-| [tooling/ai-engineering-survey-2026.md](tooling/ai-engineering-survey-2026.md) | **2026年初AI工程前沿综述** — 十章全景报告，覆盖五层框架全部主题（中文） |
-| [tooling/research-tools-survey.md](tooling/research-tools-survey.md) | AI research writing tools survey (中文) |
-| [tooling/skills-ecosystem.md](tooling/skills-ecosystem.md) | Claude Code skills & plugins ecosystem catalog |
+| [ai-engineering-survey-2026.md](tooling/ai-engineering-survey-2026.md) | **2026年初AI工程前沿综述** — 十章全景报告（中文） |
+| [research-tools-survey.md](tooling/research-tools-survey.md) | AI research writing tools survey (中文) |
+| [skills-ecosystem.md](tooling/skills-ecosystem.md) | Claude Code skills & plugins ecosystem catalog |
 
 ---
 
@@ -150,15 +169,15 @@ ai-engineering-kb/
 ### File naming
 - Concept files: `concepts/<kebab-case-name>.md`
 - Tooling/survey files: `tooling/<kebab-case-name>.md`
+- Practice guides: `<kebab-case-name>.md` (root level)
 
 ### Required frontmatter
-Every file must begin with:
 
 ```yaml
 ---
 name: <kebab-case-name>
 description: >
-  One-line description of the concept (used for quick reference)
+  One-line description
 survey_date: YYYY-MM-DD
 lang: en
 ---
@@ -167,6 +186,6 @@ lang: en
 ### Content guidelines
 - Keep ALL sources, tables, and code blocks intact
 - Use `---` horizontal rules between major sections
-- Update `concepts/_index.md` when adding a new concept (add a row to the Concept File Index table)
-- Update this README's article table when adding any file
-- Bilingual content is welcome — `research-tools-survey.md` is intentionally in Chinese
+- Update `concepts/_index.md` when adding a new concept
+- Update this README when adding any file
+- Bilingual content is welcome
