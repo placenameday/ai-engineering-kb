@@ -3,13 +3,13 @@ name: ai-engineering-kb
 description: >
   Knowledge base covering frontier AI engineering concepts and philosophies (2025-2026). Organized
   into concept deep-dives and tooling surveys.
-survey_date: 2026-03-05
+survey_date: 2026-03-27
 lang: en
 ---
 
 # AI Engineering Knowledge Base
 
-A curated reference covering frontier AI engineering concepts, design patterns, and tooling as of 2026. Survey date: 2026-03-05.
+A curated reference covering frontier AI engineering concepts, design patterns, and tooling as of 2026. Survey date: 2026-03-27.
 
 ---
 
@@ -18,8 +18,10 @@ A curated reference covering frontier AI engineering concepts, design patterns, 
 ```
 ai-engineering-kb/
 ├── README.md                    # This file
+├── practical-guide.md           # Quick-reference for Claude Code projects
 ├── concepts/                    # Individual concept deep-dives
 │   ├── _index.md                # Concept map + key thinkers table
+│   ├── harness-engineering.md   # Harness Engineering (2026 paradigm)
 │   ├── context-engineering.md   # Context Engineering (merged deep-dive)
 │   ├── software-3.0.md          # Software 3.0
 │   ├── agentic-engineering.md   # Vibe Coding → Agentic Engineering
@@ -41,10 +43,19 @@ ai-engineering-kb/
 
 ---
 
-## Five-Layer Framework (AI工程五层模型)
+## Six-Layer Framework (AI工程六层模型)
+
+**Paradigm Hierarchy:**
+- **Harness Engineering** (2026) — "How does the system behave?"
+  - ⊃ **Context Engineering** (2025) — "What does the model see?"
+    - ⊃ **Prompt Engineering** (2022-2024) — "What do we ask?"
 
 ```
  ┌─────────────────────────────────────────────────────────────────┐
+ │  L0  PARADIGM EVOLUTION  (范式演进)                             │
+ │  "How has AI engineering evolved?"                              │
+ │  Prompt (2022-24) → Context (2025) → Harness (2026)            │
+ ├─────────────────────────────────────────────────────────────────┤
  │  L1  PARADIGM & VISION  (范式与愿景)                            │
  │  "Why is everything changing?"                                  │
  │  Software 3.0 · Vibe Coding → Agentic Engineering              │
@@ -66,7 +77,6 @@ ai-engineering-kb/
  │  "How do you deploy and operate responsibly?"           ││  N   │
  │  Guardrails & Progressive Autonomy                      ││  G   │
  └─────────────────────────────────────────────────────────┘└──────┘
-  Context Engineering (上下文工程) — the cross-cutting core discipline.
 ```
 
 > See [concepts/_index.md](concepts/_index.md) for layer details, learning path, relationship matrix, and key thinkers.
@@ -74,6 +84,12 @@ ai-engineering-kb/
 ---
 
 ## All Articles
+
+### L0: Paradigm Evolution
+
+| Article | Description |
+|---------|-------------|
+| [concepts/harness-engineering.md](concepts/harness-engineering.md) | **Harness Engineering (2026)** — the operational environment around AI agents |
 
 ### L1: Paradigm & Vision
 

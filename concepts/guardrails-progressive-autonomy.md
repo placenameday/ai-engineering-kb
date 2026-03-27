@@ -4,13 +4,16 @@ description: >
   Layered safety architecture for production AI systems: pre-tool policy gates, drift/failure anomaly
   detection, graceful fallback mechanisms, and HITL escalation. Progressive autonomy: advisory mode →
   supervised execution → constrained autonomy only after reliability demonstrated.
-survey_date: 2026-03-05
+survey_date: 2026-03-27
 lang: en
 ---
 
 # Guardrails & Progressive Autonomy (护栏与渐进自主)
 
-> Survey date: 2026-03-05.
+> Survey date: 2026-03-27.
+>
+> **Note:** Guardrails are one of the seven core components of [Harness Engineering](harness-engineering.md).
+> This article provides deep-dive on the safety layer; see harness-engineering.md for the full paradigm.
 
 ---
 

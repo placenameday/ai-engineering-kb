@@ -1,7 +1,7 @@
 # KB Synthesis: Practice (Quality, Safety, Checklists, Tooling)
 
 > Part 2 of kb-synthesis split. See also: `kb-synthesis-core.md`
-> Date: 2026-03-05
+> Date: 2026-03-27
 
 ---
 
@@ -37,6 +37,28 @@
 ---
 
 ## 6. Safety and Guardrails
+
+> **Note:** Guardrails are one of seven components in [Harness Engineering](../../concepts/harness-engineering.md). The control plane below is the harness's deterministic logic gate between agent and outside world.
+
+### Control Plane Architecture (Harness Pattern)
+
+```
+Agent (LLM Brain) — NO direct access to outside world
+        │
+        ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   CONTROL PLANE (Deterministic)              │
+├─────────────────────────────────────────────────────────────┤
+│ Guardrail 1: Budget check     → <$500 autonomous?          │
+│ Guardrail 2: Scope check      → Allowed domain?            │
+│ Guardrail 3: Confidence check → >threshold?                │
+│ Guardrail 4: Rate limit       → Within quota?              │
+│ Guardrail 5: Audit log        → Record all actions         │
+└─────────────────────────────────────────────────────────────┘
+        │
+        ▼
+              [ALLOW / DENY / ESCALATE]
+```
 
 ### Four-Layer Architecture
 

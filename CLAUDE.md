@@ -10,8 +10,8 @@ AI engineering KB (2025-2026). `concepts/` (14 articles) · `tooling/` · `pract
 
 | File | Description |
 |------|-------------|
-| `kb-synthesis-core.md` | Agent, context, specs, MCP |
-| `kb-synthesis-practice.md` | Quality, safety, checklists |
+| `kb-synthesis-core.md` | Agent, context, specs, MCP + Harness paradigm |
+| `kb-synthesis-practice.md` | Quality, safety, checklists, control plane |
 | `harness-engineering-research.md` | Harness paradigm (2026-03-27) |
 | `project-refine-design-core.md` | Command design: workflow, detection |
 | `project-refine-design-metrics.md` | Command design: metrics, execution |

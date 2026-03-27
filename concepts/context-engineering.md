@@ -5,14 +5,52 @@ description: >
   systems — not just prompts, but retrieved documents, memory, tool descriptions, state, and control
   flow. Covers MCP, progressive disclosure, context rot, Anthropic's Write/Select/Compress/Isolate
   framework, Claude Code memory hierarchy, and advanced patterns (CORPGEN, Synaptic Labs, MemGPT).
-survey_date: 2026-03-05
+survey_date: 2026-03-27
 lang: en
 ---
 
 # Context Engineering (上下文工程)
 
-> Survey section updated 2026-03-05. Deep-dive research conducted 2026-03-02.
+> Survey section updated 2026-03-27. Deep-dive research conducted 2026-03-02.
 > Sources: Anthropic official docs, academic papers, community best practices, frontier survey.
+
+---
+
+## Relationship to Harness Engineering
+
+**Context Engineering is a subset of Harness Engineering.**
+
+| Paradigm | Years | Question | Scope |
+|----------|-------|----------|-------|
+| Prompt Engineering | 2022-2024 | "What to ask?" | Wording |
+| Context Engineering | 2025 | "What to send?" | Everything model sees |
+| **Harness Engineering** | 2026 | "How does it operate?" | Full operational environment |
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  HARNESS ENGINEERING                         │
+│            "How does the whole system behave?"               │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────────────────┐    │
+│  │            CONTEXT ENGINEERING                       │    │
+│  │         "What does the model see?"                   │    │
+│  │  ┌─────────────────────────────────────────────┐    │    │
+│  │  │         PROMPT ENGINEERING                   │    │    │
+│  │  │        "What do we ask?"                     │    │    │
+│  │  └─────────────────────────────────────────────┘    │    │
+│  └─────────────────────────────────────────────────────┘    │
+│                                                              │
+│  Other Harness Components:                                   │
+│  - Permissions (access control)                              │
+│  - Hooks (lifecycle intervention)                            │
+│  - Guardrails (safety boundaries)                            │
+│  - State management (persistence)                            │
+│  - Feedback loops (quality validation)                       │
+│  - Isolation (sandboxing)                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+> See [harness-engineering.md](harness-engineering.md) for the full paradigm.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: practical-guide
 description: "Practical quick-reference for building Claude Code projects, distilled from AI engineering frontier knowledge"
-survey_date: "2026-03"
+survey_date: "2026-03-27"
 lang: "en/zh"
 ---
 
@@ -9,7 +9,7 @@ lang: "en/zh"
 
 ## Quick Reference from AI Engineering Frontier (2025-2026)
 
-> 本指南从13篇前沿概念文章中提炼，面向使用 Claude Code 独立构建项目的开发者。
+> 本指南从14篇前沿概念文章中提炼，面向使用 Claude Code 独立构建项目的开发者。
 > 规则优先，不讲理论。钉在桌面，每天翻阅。
 
 ---
@@ -21,6 +21,7 @@ lang: "en/zh"
 3. **Own your prompts, control flow, and context window.** Never let a framework hide what the model sees.
 4. **Evals are the TDD of AI.** No evals = guessing. Build them before features.
 5. **Simple first, complex only when proven necessary.** Anthropic, 12-Factor, Willison all converge here.
+6. **Harness > Context.** The 2026 paradigm: control the operational environment, not just what the model sees.
 
 ---
 
@@ -236,7 +237,54 @@ lang: "en/zh"
 
 ---
 
-### 5. 安全与部署 (Safety & Deployment)
+### 5. Harness 配置 (Harness Configuration)
+
+> 2026 范式：Harness Engineering。控制 operational environment，不只是 context。
+
+#### Permission Modes 速查
+
+| Mode | 行为 | 适用场景 |
+|------|------|----------|
+| `default` | 首次使用时提示 | 日常开发 |
+| `plan` | 只读工具 | 规划模式 |
+| `acceptEdits` | 自动接受编辑 | 快速迭代 |
+| `bypassPermissions` | 跳过提示（除.git/.claude） | 信任环境 |
+| `auto` | 全自主但有边界 | 生产部署 |
+
+#### Hooks 使用场景
+
+| Hook | 能否阻止 | 用途 |
+|------|---------|------|
+| `PreToolUse` | ✓ | 拦截危险命令 (rm -rf) |
+| `PostToolUse` | ✗ | 编辑后自动 lint |
+| `Stop` | ✓ | 完成前质量检查 |
+| `SessionStart` | ✗ | 加载上下文 |
+| `SessionEnd` | ✗ | 清理、持久化状态 |
+
+#### Control Plane 检查清单
+
+每个 agent 操作都应通过：
+
+```
+□ Budget check → 费用在阈值内？
+□ Scope check → 允许的域名/路径？
+□ Confidence check → 置信度够高？
+□ Rate limit → 未超配额？
+□ Audit log → 已记录？
+```
+
+#### 配置位置
+
+| 配置类型 | 路径 |
+|---------|------|
+| 全局权限 | `~/.claude/settings.json` |
+| 项目权限 | `.claude/settings.local.json` |
+| Hooks | `settings.json` 的 `hooks` 字段 |
+| Rules | `.claude/rules/*.md` |
+
+---
+
+### 6. 安全与部署 (Safety & Deployment)
 
 #### Progressive Autonomy — 分阶段给权限
 

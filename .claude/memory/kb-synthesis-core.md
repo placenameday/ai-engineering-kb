@@ -1,7 +1,23 @@
 # KB Synthesis: Core Patterns (Agent, Context, Specs, MCP)
 
 > Part 1 of kb-synthesis split. See also: `kb-synthesis-practice.md`
-> Date: 2026-03-05
+> Date: 2026-03-27
+
+---
+
+## 0. Paradigm Evolution (2026 Update)
+
+**The Three-Phase Evolution:**
+
+| Paradigm | Years | Question | Scope |
+|----------|-------|----------|-------|
+| Prompt Engineering | 2022-2024 | "What to ask?" | Wording, phrasing |
+| Context Engineering | 2025 | "What to send?" | Everything model sees |
+| **Harness Engineering** | 2026 | "How does it operate?" | Full operational environment |
+
+**Key insight:** Context Engineering ⊂ Harness Engineering. The 2026 focus is on building infrastructure that controls agents, not more agents.
+
+See: [harness-engineering.md](../../concepts/harness-engineering.md)
 
 ---
 
